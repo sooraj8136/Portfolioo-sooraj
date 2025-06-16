@@ -8,7 +8,7 @@ const app = express()
 connectDB()
 
 app.use(cors({
-    origin: ['http://localhost:5173','https://portfolioo-sooraj.vercel.app'],
+    origin: ['http://localhost:5173','https://portfolioo-client.vercel.app'],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
