@@ -16,7 +16,7 @@ const projectData = [
 
 function Projects() {
     return (
-        <Container style={{ marginTop: '100px', marginBottom:'60px' }}>
+        <Container id = "projects" style={{ paddingTop: '120px', marginBottom: '90px' }}>
             <h1 className="text-center raleway" style={{ color: 'white', position: 'relative' }}>
                 Featured Projects
                 <div className="heading-underline mx-auto"></div>

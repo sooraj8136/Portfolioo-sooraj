@@ -28,7 +28,7 @@ const skills = [
 
 function Tools() {
     return (
-        <Container style={{ marginTop: '100px', marginBottom:"90px" }}>
+        <Container id = "skills" style={{ paddingTop: '120px', marginBottom: '90px' }}>
             <h1 className="text-center raleway" style={{ color: 'white', position: 'relative' }}>
                 My Tools
                 <div className="heading-underline mx-auto"></div>

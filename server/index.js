@@ -8,8 +8,9 @@ const app = express()
 connectDB()
 
 app.use(cors({
-    origin: 'http://localhost:5173', // frontend origin
-    credentials: true,               // allow cookies, sessions
+    origin: 'http://localhost:5173',
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
 }));
 
 app.use(express.json())
@@ -19,10 +20,6 @@ app.get('/', (req, res, next) => {
 })
 
 app.use("/api", apiRouter)
-
-// app.all('*', (req, res) => {
-//     return res.status(404).json({ message: "End-point doesn't exist" });
-// });
 
 app.listen(process.env.PORT, (err) => {
     process.env.PORT

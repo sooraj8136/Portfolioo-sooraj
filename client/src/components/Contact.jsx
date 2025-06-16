@@ -43,7 +43,7 @@ function Contact() {
     };
 
     return (
-        <Container style={{ marginTop: '90px', marginBottom: '90px' }}>
+        <Container id="contact" style={{ paddingTop: '120px', marginBottom: '90px' }}>
             <h1 className="text-center raleway text-white" style={{ position: 'relative', marginBottom: "160px" }}>
                 Get in touch
                 <div className="heading-underline mx-auto"></div>

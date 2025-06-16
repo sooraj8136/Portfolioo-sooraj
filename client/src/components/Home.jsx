@@ -29,7 +29,7 @@ function Home() {
   ];
 
   return (
-    <div className="home-section">
+    <div id="home" className="home-section">
       <div className="home-content" style={{ marginTop: '10px' }}>
         <motion.h1
           ref={titleRef}
