@@ -13,7 +13,8 @@ const contactSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: 10,
-        maxlength: 15
+        maxlength: 15,
+        match: [/^[+]?[\d\s\-()]{10,15}$/, 'Please fill a valid phone number']
     },
     message: {
         type: String,

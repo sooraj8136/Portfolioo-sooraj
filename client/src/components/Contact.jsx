@@ -15,16 +15,42 @@ function Contact() {
     const [status, setStatus] = useState('');
     const [mouseX, setMouseX] = useState(0);
 
+    const validateInputs = () => {
+        const { name, email, phone, message } = formData;
+
+        if (!name || !email || !phone || !message) {
+            return "All fields are required.";
+        }
+
+        if (phone.length < 10 || phone.length > 15) {
+            return "Enter a valid phone number.";
+        }
+
+        const phoneRegex = /^[+]?[\d\s\-()]{10,15}$/;
+        if (!phoneRegex.test(phone)) {
+            return "Phone number format is invalid.";
+        }
+
+        return null;
+    };
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const validationError = validateInputs();
+        if (validationError) {
+            setStatus(validationError);
+            setTimeout(() => setStatus(''), 3000);
+            return;
+        }
+
         const tempFormData = formData;
         setFormData({ name: '', email: '', phone: '', message: '' });
         setStatus('✔️ Message sent successfully!');
-
         setTimeout(() => setStatus(''), 3000);
 
         try {
