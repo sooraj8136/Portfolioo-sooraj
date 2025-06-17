@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 const Contact = require('../models/contact')
 
-const contacts = async (req, res) => {
+const contaCtcontroller = async (req, res) => {
     try {
         const { name, email, phone, message } = req.body;
 
@@ -41,4 +41,4 @@ Message: ${message}`,
 };
 
 
-module.exports = contacts;
+module.exports = contaCtcontroller;
