@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Gruppo&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sofia&family=Special+Gothic+Expanded+One&family=Yeseva+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Anton&family=Bebas+Neue&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Forum&family=Fredoka:wght@300..700&family=Gruppo&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Michroma&family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sofia&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&family=Special+Gothic+Expanded+One&family=Urbanist:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap');
+
 .bebas-neue-regular {
   font-family: "Bebas Neue", sans-serif;
   font-weight: 400;
@@ -18,6 +20,12 @@
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
+  font-style: normal;
+}
+
+.special-gothic-expanded-one-regular {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -53,19 +61,7 @@ body,
 }
 
 /* Underline base */
-.nav-links .nav-item::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 1.5px;
-  background: linear-gradient(to right, transparent, #00b3ff, transparent);
-  opacity: 0;
-  transition: width 0.4s ease, opacity 0.4s ease;
-  pointer-events: none;
-}
+
 
 /* Project underline */
 
@@ -253,9 +249,9 @@ body,
 
 .icon:hover {
   transform: scale(1.2);
-  color: #b3e1ff;
+  color: #b9b9b9;
   background-color: transparent !important;
-  filter: drop-shadow(0 0 6px rgba(48, 193, 255, 0.9));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
   animation: pulseGlow .5s infinite ease-in-out;
 }
 
@@ -296,41 +292,21 @@ body,
   color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .animated-word {
   display: inline-block;
   transition: all 0.5s ease-in-out;
   animation: fade 0.5s ease-in-out, pulseGlow 2s infinite ease-in-out;
-  color: #38bdf8;
+  color: #ffffff;
   font-weight: bold;
-  text-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8, 0 0 15px #38bdf8;
+  text-shadow: 0 0 5px #f8c238, 0 0 10px #ffffff, 0 0 15px #ffffff;
 }
 
 @keyframes pulseGlow {
   0%, 100% {
-    text-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8, 0 0 15px #38bdf8;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
   }
   50% {
-    text-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8, 0 0 30px #38bdf8;
+    text-shadow: 0 0 10px rgba(248, 210, 56, 0.813), 0 0 20px #ffffff, 0 0 30px #ffffff;
   }
 }
 
@@ -485,7 +461,7 @@ body,
   color: #c0e2ff;
   transform: translate(-50%, -100%);
   animation: bounce 1.5s infinite;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  text-shadow: 0 0 8px rgb(255, 255, 255);
   filter: drop-shadow(0 0 6px rgba(0, 204, 255, 0.4));
 }
 
@@ -543,7 +519,7 @@ body,
 .neon-vertical-btn {
   position: relative;
   overflow: hidden;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   color: black;
   border-radius: 50px;
   border: none;
@@ -586,10 +562,10 @@ body,
 
 @keyframes iconPulseGlow {
   0%, 100% {
-    filter: drop-shadow(0 0 6px rgba(48, 193, 255, 0.6));
+    filter: drop-shadow(0 0 6px rgb(255, 255, 255));
   }
   50% {
-    filter: drop-shadow(0 0 12px rgba(48, 193, 255, 1));
+    filter: drop-shadow(0 0 12px rgb(255, 255, 255));
   }
 }
 
@@ -649,3 +625,129 @@ body,
   100% { opacity: 0; transform: translateY(-5px); }
 }
 
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  overflow-x: auto; /* ✅ allows horizontal scroll if screen is too small */
+  white-space: nowrap;
+}
+
+.nav-item {
+  color: #fff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* .nav-item:hover {
+  color: #0dcaf0 !important;
+} */
+
+/* prevent wrapping, allow horizontal scroll */
+.nav-links {
+  flex-wrap: nowrap !important;
+  white-space: nowrap;
+}
+
+/* ✅ make sure scrollbars look clean */
+.custom-navbar::-webkit-scrollbar {
+  height: 4px;
+}
+/* .custom-navbar::-webkit-scrollbar-thumb {
+  background: #0dcaf0;
+  border-radius: 10px;
+} */
+.custom-navbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* adjust brand spacing on smaller devices */
+@media (max-width: 992px) {
+  .brand-text {
+    margin-left: 0 !important;
+  }
+}
+
+.nav-item {
+  color: #fff !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-transform: none !important; /* ✅ force normal case */
+}
+
+.nav-item:hover {
+  color: #c15017 !important;
+  text-decoration: none;
+}
+
+.about-me-btn {
+  background-color: #c8102e; /* red tone similar to image */
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 0;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.about-me-btn:hover {
+  background-color: #a50e26; /* darker red on hover */
+}
+
+.about-me-btn:focus {
+  outline: none;
+}
+
+/* Fix alignment for Hello I'm on smaller screens */
+@media (max-width: 1024px) {
+  .home-section h1 {
+    font-size: 8rem !important;
+    letter-spacing: 10px !important;
+  }
+
+  .home-section span {
+    display: block !important;
+    text-align: left !important;
+    margin-left: 8% !important; /* aligns with SOORAJ C P */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section h1 {
+    font-size: 6rem !important;
+    letter-spacing: 6px !important;
+  }
+
+  .home-section span {
+    margin-left: 10% !important; /* keeps Hello I’m aligned with name */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section h1 {
+    font-size: 3.8rem !important;
+    letter-spacing: 3px !important;
+    white-space: normal !important;
+  }
+
+  .home-section span {
+    text-align: center !important;
+    margin-left: 0 !important;
+    font-size: 1rem !important;
+  }
+}
+
+.icon-container {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.icon-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+@media (max-width: 480px) {
+  .icon-container {
+    gap: 6px !important;
+  }
+}

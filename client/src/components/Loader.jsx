@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 function Loader({ onFinish }) {
-  const cycleNames = ['SOORAJ', 'CONSISTANCY', 'DESCIPLINE', 'DESIGNER', 'MERN STACK', 'UI/UX LOVER'];
-  const finalName = 'INNOVATOR';
+  const cycleNames = ["SOORAJ", "CONSISTANCY", "DESCIPLINE", "DESIGNER", "MERN STACK"];
+  const finalName = "PORTFOLIO.";
 
   const [index, setIndex] = useState(0);
   const [cycleCount, setCycleCount] = useState(0);
@@ -18,7 +18,7 @@ function Loader({ onFinish }) {
           if (next === 0) setCycleCount((count) => count + 1);
           return next;
         });
-      }, 100); 
+      }, 100);
     } else if (!isFinal) {
       setIsFinal(true);
       timer = setTimeout(() => {
@@ -30,8 +30,17 @@ function Loader({ onFinish }) {
   }, [index, cycleCount, isFinal, onFinish]);
 
   return (
-    <div className="loader-container bebas-neue-regular">
-      <p className="loading-text shuffle-text">
+    <div className="loader-container ">
+      <p
+        className="loading-text shuffle-text bebas-neue-regular"
+        style={{
+          color: isFinal ? "#ffffff58" : "#ffffff58",
+          fontWeight: "700",
+          letterSpacing: "6px",
+          fontSize: "2.5rem",
+          transition: "color 0.3s ease",
+        }}
+      >
         {isFinal ? finalName : cycleNames[index]}
       </p>
     </div>

@@ -3,14 +3,22 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function PortfolioNavbar() {
   return (
-    <Navbar fixed="top" className="custom-navbar">
-      <Container className="justify-content-center">
-        <Nav className="nav-links d-flex flex-row text-center">
-          <Nav.Link href="#home" className="nav-item">Home</Nav.Link>
-          <Nav.Link href="#about" className="nav-item">About</Nav.Link>
-          <Nav.Link href="#projects" className="nav-item">Projects</Nav.Link>
-          <Nav.Link href="#skills" className="nav-item">Skills</Nav.Link>
-          <Nav.Link href="#contact" className="nav-item">Contact</Nav.Link>
+    <Navbar fixed="top" className="custom-navbar px-3">
+      <Container fluid className="d-flex justify-content-between align-items-center flex-nowrap">
+        <Navbar.Brand 
+          href="#home" 
+          className="fw-bold text-light brand-text"
+          style={{textDecoration:"none"}}
+        >
+          portfolio.
+        </Navbar.Brand>
+
+        <Nav className="nav-links d-flex flex-row text-center gap-4 flex-nowrap">
+          {/* <Nav.Link href="#home" className="nav-item" style={{letterSpacing:"2px"}}>Home</Nav.Link> */}
+          <Nav.Link href="#about" className="nav-item" style={{letterSpacing:"4px"}}>ABOUT</Nav.Link>
+          <Nav.Link href="#projects" className="nav-item" style={{letterSpacing:"4px"}}>PROJECTS</Nav.Link>
+          <Nav.Link href="#skills" className="nav-item" style={{letterSpacing:"4px"}}>SKILLS</Nav.Link>
+          <Nav.Link href="#contact" className="nav-item" style={{letterSpacing:"4px"}}>CONTACT</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

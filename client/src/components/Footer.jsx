@@ -10,7 +10,7 @@ function Footer() {
                     <Col md={4} className="mb-3 mb-md-0">
                         <h5 className="mb-2 raleway">Sooraj C P</h5>
                         <p style={{ fontSize: "0.9rem", color: "#aaa" }}>
-                            MERN stack developer | UI UX Designer<br />
+                            MERN stack developer<br />
                             Based in Kerala, India.
                         </p>
                     </Col>

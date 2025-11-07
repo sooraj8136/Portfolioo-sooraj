@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { axiosInstance } from '../config/axiosInstance';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaMapMarkerAlt, FaUser, FaEnvelope } from 'react-icons/fa';
-import mapImage from '../assets/projects/a69931b018b7aa2d477313c6ee6a64ed.jpg';
+import mapImage from '../assets/projects/b45753e2d4cf284bc4e1fa8dbdeb3d47.jpg';
 
 function Contact() {
     const [formData, setFormData] = useState({
@@ -70,54 +70,105 @@ function Contact() {
 
     return (
         <Container id="contact" style={{ paddingTop: '120px', marginBottom: '90px' }}>
-            <h1 className="text-center raleway text-white" style={{ position: 'relative', marginBottom: "160px" }}>
-                Get in touch
-                <div className="heading-underline mx-auto"></div>
-            </h1>
+            <h2
+                className="bebas-neue-regular"
+                style={{
+                    color: "#ffffff80",
+                    fontWeight: "700",
+                    fontSize: "4rem",
+                    letterSpacing: "6px",
+                    textTransform: "uppercase",
+                    position: "relative",
+                    display: "inline-block",
+                    paddingBottom: "8px",
+                }}
+            >
+                GET IN TOUCH.
+                <span
+                    style={{
+                        position: "absolute",
+                        left: 0,
+                        bottom: 0,
+                        width: "280px",        // underline length
+                        height: "2px",        // thickness
+                        backgroundColor: "#c8102e", // orange underline color
+                    }}
+                ></span>
+            </h2>
+
 
             <Row className="mt-5 text-white">
-                <Col md={6} className="d-flex flex-column justify-content-center align-items-start text-start mb-4 mb-md-0">
-                    <h4 className="raleway" style={{ fontSize: "4rem", marginBottom: "50px" }}>Contact me</h4>
+                <Col
+                    md={6}
+                    className="d-flex flex-column justify-content-center align-items-start text-start mb-4 mb-md-0"
+                >
+                    <h4 className="raleway" style={{ fontSize: "4rem", marginBottom: "50px" }}>
+                        Contact me
+                    </h4>
+
                     <div
                         className="map-overlay-container"
                         style={{
-                            position: 'relative',
-                            width: '100%',
-                            height: '300px',
+                            position: "relative",
+                            width: "100%",
+                            height: "300px",
                             backgroundImage: `url(${mapImage})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            borderRadius: '10px',
-                            overflow: 'hidden',
-                            color: 'white',
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                            borderRadius: "10px",
+                            overflow: "hidden",
+                            color: "white",
                         }}
                     >
-                        <FaMapMarkerAlt className="map-pin-icon" />
-                        <span className='raleway' style={{
-                            position: 'absolute',
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            padding: '4px 8px',
-                            fontSize: '0.9rem',
-                            fontWeight: '600',
-                        }}>
+                        {/* Orange-colored map pin with no blue shadow */}
+                        <FaMapMarkerAlt
+                            className="map-pin-icon"
+                            style={{
+                                position: "absolute",
+                                top: "50%",
+                                left: "50%",
+                                transform: "translate(-50%, -100%)",
+                                color: "#c8102e",
+                                fontSize: "2rem",
+                                boxShadow: "none",
+                                textShadow: "none",
+                                outline: "none",
+                            }}
+                        />
+
+                        <span
+                            className="raleway"
+                            style={{
+                                position: "absolute",
+                                top: "50%",
+                                left: "50%",
+                                transform: "translateX(-50%)",
+                                padding: "4px 8px",
+                                fontSize: "0.9rem",
+                                fontWeight: "600",
+                            }}
+                        >
                             I'm here
                         </span>
-                        <div className="contact-overlay-text" style={{
-                            position: 'absolute',
-                            top: '20px',
-                            left: '0px',
-                            padding: '10px 16px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '6px',
-                        }}>
+
+                        <div
+                            className="contact-overlay-text"
+                            style={{
+                                position: "absolute",
+                                top: "20px",
+                                left: "0px",
+                                padding: "10px 16px",
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "6px",
+                            }}
+                        >
                             <div className="d-flex align-items-center gap-2">
                                 <FaUser /> <span>Sooraj</span>
                             </div>
                             <div className="d-flex align-items-center gap-2">
-                                <FaMapMarkerAlt /> <span>Malappuram, Kerala</span>
+                                <FaMapMarkerAlt style={{ color: "#ffffffff", boxShadow: "none", textShadow: "none", outline: "none" }} />
+                                <span>Malappuram, Kerala</span>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                                 <FaEnvelope /> <span>soorajcpchathanathparampil@gmail.com</span>
@@ -158,15 +209,9 @@ function Contact() {
                         <div className="d-flex justify-content-center mt-3">
                             <button
                                 type="submit"
-                                className="neon-vertical-btn"
-                                onMouseMove={handleMouseMove}
-                                onMouseLeave={() => setMouseX(0)}
+                                className="about-me-btn"
                             >
-                                Send
-                                <span
-                                    className="neon-vertical-line"
-                                    style={{ left: `${mouseX}px` }}
-                                ></span>
+                                CONTACT ME
                             </button>
                         </div>
                         {status && <p className="mt-3 text-center">{status}</p>}
