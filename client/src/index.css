@@ -302,9 +302,12 @@ body,
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
   }
+
   50% {
     text-shadow: 0 0 10px rgba(248, 210, 56, 0.813), 0 0 20px #ffffff, 0 0 30px #ffffff;
   }
@@ -494,12 +497,15 @@ body,
   color: #fff !important;
   border-radius: 6px !important;
   border: 1px solid #a7a7a74e !important;
-  outline: none !important;         /* Removes the default blue outline */
-  box-shadow: none !important;      /* Prevents Bootstrap or browser shadow */
+  outline: none !important;
+  /* Removes the default blue outline */
+  box-shadow: none !important;
+  /* Prevents Bootstrap or browser shadow */
 }
 
 .custom-input:focus {
-  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); /* Optional subtle glow */
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+  /* Optional subtle glow */
   outline: none !important;
 }
 
@@ -561,9 +567,12 @@ body,
 }
 
 @keyframes iconPulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     filter: drop-shadow(0 0 6px rgb(255, 255, 255));
   }
+
   50% {
     filter: drop-shadow(0 0 12px rgb(255, 255, 255));
   }
@@ -593,8 +602,13 @@ body,
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-text {
@@ -608,9 +622,20 @@ body,
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(10px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-10px); }
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
 
 
@@ -620,15 +645,27 @@ body,
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translateY(5px); }
-  50% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(-5px); }
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
 }
 
 .custom-navbar {
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  overflow-x: auto; /* ✅ allows horizontal scroll if screen is too small */
+  overflow-x: auto;
+  /* ✅ allows horizontal scroll if screen is too small */
   white-space: nowrap;
 }
 
@@ -652,6 +689,7 @@ body,
 .custom-navbar::-webkit-scrollbar {
   height: 4px;
 }
+
 /* .custom-navbar::-webkit-scrollbar-thumb {
   background: #0dcaf0;
   border-radius: 10px;
@@ -667,20 +705,22 @@ body,
   }
 }
 
-.nav-item {
-  color: #fff !important;
+.portfolio-navbar .nav-link {
+  color: #ffffff86 !important;
   font-weight: 500;
-  transition: color 0.3s ease;
-  text-transform: none !important; /* ✅ force normal case */
+  transition: all 0.3s ease !important;
+  text-transform: none !important;
 }
 
-.nav-item:hover {
-  color: #c15017 !important;
-  text-decoration: none;
+.portfolio-navbar .nav-link:hover {
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
+
 
 .about-me-btn {
-  background-color: #c8102e; /* red tone similar to image */
+  background-color: #c8102e;
+  /* red tone similar to image */
   color: white;
   font-weight: 600;
   letter-spacing: 2px;
@@ -692,7 +732,8 @@ body,
 }
 
 .about-me-btn:hover {
-  background-color: #a50e26; /* darker red on hover */
+  background-color: #a50e26;
+  /* darker red on hover */
 }
 
 .about-me-btn:focus {
@@ -709,7 +750,8 @@ body,
   .home-section span {
     display: block !important;
     text-align: left !important;
-    margin-left: 8% !important; /* aligns with SOORAJ C P */
+    margin-left: 8% !important;
+    /* aligns with SOORAJ C P */
   }
 }
 
@@ -720,7 +762,8 @@ body,
   }
 
   .home-section span {
-    margin-left: 10% !important; /* keeps Hello I’m aligned with name */
+    margin-left: 10% !important;
+    /* keeps Hello I’m aligned with name */
   }
 }
 
@@ -739,11 +782,13 @@ body,
 }
 
 .icon-container {
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
 }
 
 .icon-container::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari */
+  display: none;
+  /* Hide scrollbar for Chrome/Safari */
 }
 
 @media (max-width: 480px) {

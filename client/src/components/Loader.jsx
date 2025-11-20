@@ -30,18 +30,25 @@ function Loader({ onFinish }) {
   }, [index, cycleCount, isFinal, onFinish]);
 
   return (
-    <div className="loader-container ">
+    <div className="loader-container">
       <p
         className="loading-text shuffle-text bebas-neue-regular"
         style={{
-          color: isFinal ? "#ffffff58" : "#ffffff58",
+          color: "#ffffff58",
           fontWeight: "700",
-          letterSpacing: "6px",
-          fontSize: "2.5rem",
+          letterSpacing: "8px",
+          fontSize: "3.5rem",
           transition: "color 0.3s ease",
         }}
       >
-        {isFinal ? finalName : cycleNames[index]}
+        {isFinal ? (
+          <>
+            PORTFOLIO
+            <span style={{ color: "#ffffff" }}>.</span> {/* white dot */}
+          </>
+        ) : (
+          cycleNames[index]
+        )}
       </p>
     </div>
   );

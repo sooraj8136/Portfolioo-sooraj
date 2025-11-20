@@ -13,7 +13,7 @@ function PortfolioNavbar() {
           portfolio.
         </Navbar.Brand>
 
-        <Nav className="nav-links d-flex flex-row text-center gap-4 flex-nowrap">
+        <Nav className="portfolio-navbar d-flex flex-row text-center gap-4 flex-nowrap">
           {/* <Nav.Link href="#home" className="nav-item" style={{letterSpacing:"2px"}}>Home</Nav.Link> */}
           <Nav.Link href="#about" className="nav-item" style={{letterSpacing:"4px"}}>ABOUT</Nav.Link>
           <Nav.Link href="#projects" className="nav-item" style={{letterSpacing:"4px"}}>PROJECTS</Nav.Link>
