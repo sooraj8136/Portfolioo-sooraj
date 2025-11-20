@@ -706,21 +706,28 @@ body,
 }
 
 .portfolio-navbar .nav-link {
-  color: #ffffff86 !important;
-  font-weight: 500;
-  transition: all 0.3s ease !important;
-  text-transform: none !important;
+  position: relative;
+  display: inline-block;
+  color: transparent !important;
+
+  /* Left-to-right color wipe */
+  background: linear-gradient(to right, #ffffff98 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: 0 0;   /* Start from left */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  transition: background-position 0.4s ease !important;
 }
 
 .portfolio-navbar .nav-link:hover {
-  color: #ffffff !important;
+  background-position: -100% 0; /* Slide wipe → to the right */
   text-decoration: none !important;
 }
 
 
 .about-me-btn {
   background-color: #c8102e;
-  /* red tone similar to image */
   color: white;
   font-weight: 600;
   letter-spacing: 2px;
@@ -728,16 +735,79 @@ body,
   padding: 12px 40px;
   border-radius: 0;
   text-transform: uppercase;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, padding 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.about-me-btn:hover {
-  background-color: #a50e26;
-  /* darker red on hover */
+/* Wrap text so we can move it */
+.about-me-btn span {
+  display: inline-block;
+  transition: transform 0.3s ease;
 }
 
-.about-me-btn:focus {
-  outline: none;
+/* Arrow initially hidden */
+.about-me-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #c8102e;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 0;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+/* Sliding color layer */
+.about-me-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #09000262; /* hover color */
+  z-index: 0;
+  transition: width 0.4s ease;
+}
+
+/* Apply sliding animation */
+.about-me-btn:hover::before {
+  width: 100%; /* slides from right → left */
+}
+
+/* Bring text & arrow above sliding layer */
+.about-me-btn span,
+.about-me-btn::after {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- ARROW SETTINGS (yours, unchanged) --- */
+.about-me-btn::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -35px;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Move text left */
+.about-me-btn:hover span {
+  transform: translateX(-10px);
+}
+
+/* Arrow slide + grow */
+.about-me-btn:hover::after {
+  right: 12px;
+  opacity: 1;
+  font-size: 24px;
 }
 
 /* Fix alignment for Hello I'm on smaller screens */
@@ -796,3 +866,4 @@ body,
     gap: 6px !important;
   }
 }
+

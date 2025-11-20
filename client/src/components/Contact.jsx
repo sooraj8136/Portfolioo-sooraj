@@ -73,7 +73,7 @@ function Contact() {
             <h2
                 className="bebas-neue-regular"
                 style={{
-                    color: "#ffffff80",
+                    color: "#ffffffc6",
                     fontWeight: "700",
                     fontSize: "4rem",
                     letterSpacing: "6px",
@@ -207,11 +207,8 @@ function Contact() {
                             ></textarea>
                         </div>
                         <div className="d-flex justify-content-center mt-3">
-                            <button
-                                type="submit"
-                                className="about-me-btn"
-                            >
-                                CONTACT ME
+                            <button type="submit" className="about-me-btn">
+                                <span>CONTACT ME</span>
                             </button>
                         </div>
                         {status && <p className="mt-3 text-center">{status}</p>}

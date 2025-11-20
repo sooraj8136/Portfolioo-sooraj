@@ -38,7 +38,7 @@ function Tools() {
                     <h2
                         className="bebas-neue-regular"
                         style={{
-                            color: "#ffffff80",
+                            color: "#ffffffc6",
                             fontWeight: "700",
                             fontSize: "4rem",
                             letterSpacing: "6px",
