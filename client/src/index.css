@@ -713,7 +713,8 @@ body,
   /* Left-to-right color wipe */
   background: linear-gradient(to right, #ffffff98 50%, #ffffff 50%);
   background-size: 200% 100%;
-  background-position: 0 0;   /* Start from left */
+  background-position: 0 0;
+  /* Start from left */
   -webkit-background-clip: text;
   background-clip: text;
 
@@ -721,7 +722,8 @@ body,
 }
 
 .portfolio-navbar .nav-link:hover {
-  background-position: -100% 0; /* Slide wipe → to the right */
+  background-position: -100% 0;
+  /* Slide wipe → to the right */
   text-decoration: none !important;
 }
 
@@ -769,14 +771,16 @@ body,
   right: 0;
   width: 0%;
   height: 100%;
-  background-color: #09000262; /* hover color */
+  background-color: #09000262;
+  /* hover color */
   z-index: 0;
   transition: width 0.4s ease;
 }
 
 /* Apply sliding animation */
 .about-me-btn:hover::before {
-  width: 100%; /* slides from right → left */
+  width: 100%;
+  /* slides from right → left */
 }
 
 /* Bring text & arrow above sliding layer */
@@ -867,3 +871,64 @@ body,
   }
 }
 
+.social-icons-fixed {
+  position: fixed;
+  bottom: 30px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.social-icons-fixed a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* ONLY Pulse Glow */
+.social-icons-fixed a:hover {
+  color: #fff;
+  animation: pulseGlow 0.8s ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.0);
+  }
+
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  }
+
+  100% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0.0);
+  }
+}
+
+.scroll-dots {
+  position: fixed;
+  right: 40px;
+  bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.scroll-dots .dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #fefefe71;
+  /* orange outline */
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.scroll-dots .dot.active {
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+}
